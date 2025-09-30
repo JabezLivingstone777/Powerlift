@@ -6,8 +6,8 @@ const About = () => {
     <div className="about-page">
       <section className="about-hero">
         <div className="hero-content">
-          <h1>About Telangana Powerlifting Federation</h1>
-          <p>Building strength, character, and champions since 2010</p>
+          <h1>WPC Telangana — About Us</h1>
+          <p>Building strength, character, and champions</p>
         </div>
       </section>
 
@@ -15,15 +15,16 @@ const About = () => {
         <div className="container">
           <div className="story-grid">
             <div className="story-content">
-              <h2>Our Story</h2>
+              <h2>About Us</h2>
               <p>
-                The Telangana Powerlifting Federation was established in 2010 with a vision to promote and develop powerlifting across the state of Telangana. What started as a small group of passionate strength athletes has grown into the leading powerlifting organization in the region.
+                WPC Telangana is the official state body affiliated with the World Powerlifting Congress
+ (WPC) India, which in turn represents the World Powerlifting Congress International
+ Federation. Our mission is to promote powerlifting across Telangana, nurture talent at the
+ grassroots level, and provide athletes with a pathway to compete at district, state, national,
+ and international levels
               </p>
               <p>
                 Over the years, we have fostered a community of dedicated athletes, coaches, and supporters who share a common goal: to push the boundaries of human strength and achieve excellence in powerlifting. Our federation has produced numerous national and international champions who have brought pride to our state.
-              </p>
-              <p>
-                Today, we stand as a testament to the power of dedication, hard work, and community support. With over 500 registered athletes and 25+ annual events, we continue to grow and inspire the next generation of powerlifters.
               </p>
             </div>
             <div className="story-image">
@@ -41,16 +42,24 @@ const About = () => {
             <div className="mission-card">
               <div className="card-icon">🎯</div>
               <h3>Our Mission</h3>
-              <p>
-                To promote, develop, and regulate powerlifting throughout Telangana state by providing opportunities for athletes of all levels to compete, train, and excel in the sport while maintaining the highest standards of integrity and fair play.
-              </p>
+              <ul style={{listStyleType: 'disc', textAlign: 'start', paddingLeft: '20px'}}>
+                <li>Organize district and state-level powerlifting championships under WPC rules.</li>
+                <li>Identify and nurture talent from all districts of Telangana.</li>
+                <li>Support athletes to represent Telangana in WPC Nationals.</li>
+                <li>Guide top performers to Asian and World Championships.</li>
+                <li>Promote raw and equipped lifting with AWPC (drug-tested) divisions</li>
+              </ul>
             </div>
             <div className="vision-card">
               <div className="card-icon">🌟</div>
               <h3>Our Vision</h3>
-              <p>
-                To be the premier powerlifting federation in India, recognized for developing world-class athletes, promoting inclusive participation, and advancing the sport through innovation, education, and community engagement.
-              </p>
+              <ul style={{listStyleType: 'disc', textAlign: 'start', paddingLeft: '20px'}}>
+                <li>Make Telangana a recognized leader in Indian powerlifting.</li>
+                <li>Build a sustainable ecosystem that supports athletes, coaches, and clubs.</li>
+                <li>Help lifters win medals at national and international championships.</li>
+                <li>Spread awareness of strength sports across all districts.</li>
+                <li>Foster a culture of sportsmanship and respect within the powerlifting community.</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -109,9 +118,9 @@ const About = () => {
                 <span>👤</span>
               </div>
               <div className="leader-info">
-                <h4>Mr. Rajesh Kumar</h4>
-                <p className="position">President</p>
-                <p className="bio">With over 20 years in powerlifting, Rajesh has been instrumental in developing the sport across Telangana. Former national champion and certified coach.</p>
+                <h4> Inturi Rekha</h4>
+                <p className="position">State President</p>
+                <p className="bio">With over 20 years in powerlifting, Inturi Rekha has been instrumental in developing the sport across Telangana. Former national champion and certified coach.</p>
               </div>
             </div>
             <div className="leader-card">
@@ -119,9 +128,9 @@ const About = () => {
                 <span>👤</span>
               </div>
               <div className="leader-info">
-                <h4>Ms. Priya Sharma</h4>
+                <h4>Ms. xxxxxxxxxx</h4>
                 <p className="position">Vice President</p>
-                <p className="bio">International referee and former state record holder. Priya leads our women's development programs and coaching certifications.</p>
+                <p className="bio">International referee and former state record holder. xxxxxxxxxx leads our women's development programs and coaching certifications.</p>
               </div>
             </div>
             <div className="leader-card">
@@ -129,9 +138,9 @@ const About = () => {
                 <span>👤</span>
               </div>
               <div className="leader-info">
-                <h4>Dr. Vikram Reddy</h4>
+                <h4>Dr. xxxxxxxxxx</h4>
                 <p className="position">Secretary General</p>
-                <p className="bio">Sports medicine specialist and powerlifting enthusiast. Vikram oversees our safety protocols and athlete wellness programs.</p>
+                <p className="bio">Sports medicine specialist and powerlifting enthusiast. xxxxxxxx oversees our safety protocols and athlete wellness programs.</p>
               </div>
             </div>
             <div className="leader-card">
@@ -139,8 +148,8 @@ const About = () => {
                 <span>👤</span>
               </div>
               <div className="leader-info">
-                <h4>Mr. Suresh Patel</h4>
-                <p className="position">Technical Director</p>
+                <h4>Mr. xxxxxxxxxxx</h4>
+                <p className="position">Treasurer</p>
                 <p className="bio">Former international competitor and IPF certified technical official. Leads our coaching development and competition standards.</p>
               </div>
             </div>

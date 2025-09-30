@@ -4,69 +4,164 @@
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 120px;
   overflow: hidden;
   line-height: 0;
   z-index: 1;
+  pointer-events: none;
 }
 
 .wave {
   position: relative;
   display: block;
-  width: calc(100% + 1.3px);
-  height: 150px;
-  animation: wave-flow 12s ease-in-out infinite;
+  width: 100%;
+  height: 100%;
+  transform-origin: bottom;
 }
 
+/* Optimized wave animations with GPU acceleration */
 .wave-shape {
-  fill: rgba(255, 255, 255, 0.9);
-  animation: wave-movement 8s ease-in-out infinite alternate;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
-.wave-shape:nth-child(1) {
-  animation-delay: 0s;
+/* Back wave - slowest, most subtle */
+.wave-back {
+  animation: wave-float-1 18s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform-origin: center bottom;
+}
+
+/* Middle wave - medium speed */
+.wave-middle {
+  animation: wave-float-2 14s cubic-bezier(0.36, 0.45, 0.63, 0.53) -5s infinite;
+  transform-origin: center bottom;
+}
+
+/* Front wave - fastest, most prominent */
+.wave-front {
+  animation: wave-float-3 10s cubic-bezier(0.36, 0.45, 0.63, 0.53) -2s infinite;
+  transform-origin: center bottom;
+}
+
+/* Smooth floating animations */
+@keyframes wave-float-1 {
+  0%, 100% {
+    transform: translateX(0) translateY(0) scaleX(1);
+  }
+  25% {
+    transform: translateX(-2%) translateY(-3px) scaleX(1.02);
+  }
+  50% {
+    transform: translateX(0) translateY(-5px) scaleX(1);
+  }
+  75% {
+    transform: translateX(2%) translateY(-3px) scaleX(0.98);
+  }
+}
+
+@keyframes wave-float-2 {
+  0%, 100% {
+    transform: translateX(0) translateY(0) scaleX(1);
+  }
+  25% {
+    transform: translateX(3%) translateY(-4px) scaleX(0.98);
+  }
+  50% {
+    transform: translateX(0) translateY(-7px) scaleX(1);
+  }
+  75% {
+    transform: translateX(-3%) translateY(-4px) scaleX(1.02);
+  }
+}
+
+@keyframes wave-float-3 {
+  0%, 100% {
+    transform: translateX(0) translateY(0) scaleX(1);
+  }
+  33% {
+    transform: translateX(-4%) translateY(-5px) scaleX(1.03);
+  }
+  66% {
+    transform: translateX(4%) translateY(-8px) scaleX(0.97);
+  }
+}
+
+/* Hover effect - subtle interaction */
+.wave-container:hover .wave-back {
+  animation-duration: 16s;
+}
+
+.wave-container:hover .wave-middle {
+  animation-duration: 12s;
+}
+
+.wave-container:hover .wave-front {
   animation-duration: 8s;
 }
 
-.wave-shape:nth-child(2) {
-  animation-delay: -2s;
-  animation-duration: 6s;
-}
-
-.wave-shape:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 4s;
-}
-
-@keyframes wave-flow {
-  0%, 100% {
-    transform: translateX(0px) scale(1);
-  }
-  33% {
-    transform: translateX(-15px) scale(1.02);
-  }
-  66% {
-    transform: translateX(15px) scale(0.98);
-  }
-}
-
-@keyframes wave-movement {
-  0% {
-    transform: translateX(-5px) scaleY(1);
-  }
-  100% {
-    transform: translateX(5px) scaleY(1.05);
-  }
-}
-
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .wave-container {
+    height: 100px;
+  }
+}
+
 @media (max-width: 768px) {
-  .wave {
+  .wave-container {
     height: 80px;
+  }
+  
+  /* Simplify animations on mobile for better performance */
+  .wave-back {
+    animation-duration: 20s;
+  }
+  
+  .wave-middle {
+    animation-duration: 16s;
+  }
+  
+  .wave-front {
+    animation-duration: 12s;
   }
 }
 
 @media (max-width: 480px) {
-  .wave {
+  .wave-container {
     height: 60px;
+  }
+  
+  /* Further simplify on small screens */
+  .wave-back {
+    animation: wave-float-simple 22s linear infinite;
+  }
+  
+  .wave-middle {
+    animation: wave-float-simple 18s linear -6s infinite;
+  }
+  
+  .wave-front {
+    animation: wave-float-simple 14s linear -3s infinite;
+  }
+}
+
+/* Simplified animation for mobile performance */
+@keyframes wave-float-simple {
+  0%, 100% {
+    transform: translateX(0) scaleX(1);
+  }
+  50% {
+    transform: translateX(-3%) scaleX(1.02);
+  }
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .wave-shape {
+    animation: none !important;
+  }
+  
+  .wave-container {
+    opacity: 0.9;
   }
 }
