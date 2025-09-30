@@ -45,6 +45,19 @@ const HeroSlider = () => {
         { number: "30+", label: "National Medalists" },
         { number: "5+", label: "International Athletes" }
       ]
+    },
+    {
+      id: 4,
+      title: "Compete at Every Level",
+      subtitle: "From local meets to national championships",
+      description: "Participate in competitions that match your skill level and aspire to represent Telangana on the national stage",
+      primaryButton: { text: "View Competitions", link: "/events" },
+      secondaryButton: { text: "Competition Rules", link: "/rules" },
+      stats: [
+        { number: "100+", label: "State Records" },
+        { number: "30+", label: "National Medalists" },
+        { number: "5+", label: "International Athletes" }
+      ]
     }
   ];
 
@@ -64,7 +77,7 @@ const HeroSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000); // Change slide every 6 seconds
+    }, 8000); // Change slide every 6 seconds
     return () => clearInterval(interval);
   }, [slides.length]);
 
